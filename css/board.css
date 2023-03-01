@@ -30,11 +30,11 @@
 }
 
 .cell::before{
-  transition: 1s all;
+  transition: .6s all;
 }
 
 .cell::after{
-  transition: 0.5s all;
+  transition: .3s all;
 }
 
 
