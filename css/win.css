@@ -1,0 +1,40 @@
+.hide{
+  display: none;
+}
+
+.winArea{
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.winText{
+  font-size: 3.5rem;
+  color: var(--white-color);
+}
+
+.restartButton{
+  width: 80px;
+  height: 80px;
+
+  background: rgba(255, 255, 255, .8);
+  border-radius: 100%;
+
+  cursor: pointer;
+}
+
+.restartButtonIcon{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}

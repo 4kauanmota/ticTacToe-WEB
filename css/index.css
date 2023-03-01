@@ -1,0 +1,25 @@
+@import url(board.css);
+@import url(win.css);
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../fonts/Inter-Regular.ttf);
+}
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+:root{
+  --black-color: #000000;
+  --gray-color: #c0c0c0;
+  --white-color: #ffffff;
+
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * .8);
+}
+
+body{
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
