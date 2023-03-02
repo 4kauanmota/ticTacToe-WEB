@@ -17,26 +17,52 @@
 
 <body>
 
-  <div class="board">
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-  </div>
-
-  <div class="winScreen">
-    <div class="winArea">
-      <h1 class="winText"></h1>
-      <button class="restartButton">
-        <lord-icon src="https://cdn.lordicon.com/akuwjdzh.json" trigger="hover" class="restartButtonIcon"/>
-      </button>
+  <section id="tic-tac-toe">
+    <div id="board">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
     </div>
-  </div>  
+
+    <div id="scoreBoard">
+
+      <div class="scoreArea">
+        <div class="score"> 
+          <div class="xArea topBorder"></div> 
+          <span id="xScore"> 0</span> 
+        </div>
+
+        <div class="score"> 
+          <div class="oArea"></div> 
+          <span id="oScore"> 0</span> 
+        </div>
+      </div>
+      
+      <div class="winnerIconArea"> 
+        <lord-icon src="https://cdn.lordicon.com/rqbhwzez.json" trigger="loop" delay="2000" colors="primary:#121331,secondary:#000000" class="winnerIcon hide"></lord-icon>
+        <div class="winnerIcon" id="#winnerIconControl"></div>
+      </div>
+
+    </div>
+  
+    <div id="winScreen">
+
+      <div class="winArea">
+        <h1 class="winText"></h1>
+
+        <button class="restartButton">
+          <lord-icon src="https://cdn.lordicon.com/akuwjdzh.json" trigger="hover" class="restartButtonIcon"/>
+        </button>
+      </div>
+
+    </div>  
+  </section>
 </body>
 
 </html>
