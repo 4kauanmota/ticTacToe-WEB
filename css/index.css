@@ -1,6 +1,7 @@
 @import url(board.css);
-@import url(scoreBoard.css);
 @import url(win.css);
+@import url(scoreBoard.css);
+@import url(ia.css);
 
 @font-face {
   font-family: 'Inter';
@@ -29,7 +30,7 @@ body{
 
 #tic-tac-toe{
   width: 100vw;
-  height: 95vh;
+  height: 90vh;
 
   display: flex;
   justify-content: center;

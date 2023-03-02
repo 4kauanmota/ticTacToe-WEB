@@ -4,11 +4,12 @@
   margin-top: 5rem;
 
   position: fixed;
-  bottom: 2rem;
+  bottom: 0;
 }
 
 .scoreArea{
   display: flex;
+  margin-left: 1rem;
 }
 
 .score{
@@ -18,7 +19,7 @@
   font-size: 3rem;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -94,17 +95,17 @@
 
 #xScore, #oScore{
   font-weight: bold;
-  width: 5.7rem;
+  width: 8rem;
 }
 
 .winnerIconArea{
   display: flex;
-  justify-content: space-around;
+  margin-left: 1rem;
 }
 
 .winnerIcon{
-  width: 4rem;
+  width: 50%;
   height: 4rem;
 
-  transform: translate(-2.85rem, -1.5rem);
+  transform: translate(-3.85rem, -1.5rem);
 }
