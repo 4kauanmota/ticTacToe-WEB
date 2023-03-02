@@ -30,7 +30,7 @@ body{
 
 #tic-tac-toe{
   width: 100vw;
-  height: 90vh;
+  height: 95vh;
 
   display: flex;
   justify-content: center;

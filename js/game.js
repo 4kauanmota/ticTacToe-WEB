@@ -15,7 +15,7 @@ const winScreen = document.querySelector('div#winScreen');
 const winText = document.querySelector('.winText');
 const restartButton = document.querySelector('.restartButton');
 const winnerIcon = document.querySelector('lord-icon.winnerIcon');
-let actualTurn, needChange = true;
+let actualTurn, switchTurn = true, needChange = true;
 
 const switchTurns = () =>{
   actualTurn = !actualTurn;
@@ -67,17 +67,20 @@ const medalControl = (changeType) =>{
 }
 
 const endGame = (end, currentClass) =>{
+  
   let xScoreValue = Number(xScore.outerText);
   let oScoreValue = Number(oScore.outerText);
-
+  
   if(end){
     if(currentClass == xClass) xScore.innerText = " " + (xScoreValue += 1);
     else oScore.innerText = (oScoreValue += 1);
-
+    
     winText.innerText = `${actualTurn ? 'O' : 'X'} Wins!`;
-
+    
+    switchTurns();
+    
     if(Math.abs(xScoreValue - oScoreValue) == 0) needChange = true;
-
+    
     if(needChange){
       if(xScoreValue > oScoreValue) medalControl(true)
       else if(oScoreValue > xScoreValue) medalControl(false)
@@ -91,6 +94,7 @@ const endGame = (end, currentClass) =>{
 const placeMark = (cell, currentClass) =>{
   cell.classList.add(currentClass);
 
+  
   if(checkWin(currentClass)) endGame(true, currentClass);
   else if(checkDraw()) endGame(false);
   else{
@@ -109,7 +113,7 @@ const handleClick = (e) =>{
 const startTheGame = () =>{
   winScreen.classList.add('hide');
 
-  actualTurn = false;
+  actualTurn = switchTurn = !switchTurn;
 
   cells.forEach(cell =>{
     cell.classList.remove(oClass);
@@ -119,9 +123,6 @@ const startTheGame = () =>{
   });
 
   setHoverEffect();
-
-  oArea.classList.remove('topBorder');
-  xArea.classList.add('topBorder');
 }
 
 restartButton.addEventListener('click', startTheGame);

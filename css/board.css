@@ -27,11 +27,11 @@
 }
 
 .cell::before{
-  transition: .6s all;
+  -webkit-transition: .6s all;-o-transition: .6s all;transition: .6s all;
 }
 
 .cell::after{
-  transition: .3s all;
+  -webkit-transition: .3s all;-o-transition: .3s all;transition: .3s all;
 }
 
 

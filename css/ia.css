@@ -1,0 +1,67 @@
+.iaArea{
+  position: fixed;
+  top: 1rem;
+}
+
+.toggleButton{
+  position: relative;
+
+  width: 107px;
+}
+
+.turnOnIa{
+  width: 100px;
+  height: 40px;
+
+  -webkit-appearance: none;
+
+  border: 1px solid var(--gray-color);
+  border-radius: 20px;
+
+  transition: 0.4s all;
+  
+  cursor: pointer;
+
+  position: relative;
+}
+
+.turnOnIa:checked{
+  background-color: var(--gray-color);
+}
+
+.turnOnIa::before{
+  content: '';
+
+  position: absolute;
+  left: 0;
+
+  width: 38px;
+  height: 38px;
+
+  background-color: var(--black-color);
+
+  border-radius: 50%;
+
+  transition: .4s all;
+}
+
+.turnOnIa:checked:before{
+  left: 60px;
+}
+
+.btnInformations{
+  pointer-events: none;
+}
+
+.offArea{
+  transform: translate(.5rem, -2.7rem);
+}
+
+.onArea{
+  transform: translate(2rem, -2.7rem);
+}
+
+
+.buttonIcon{
+  z-index: 3;
+}

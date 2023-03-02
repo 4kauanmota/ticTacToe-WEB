@@ -31,10 +31,13 @@
   border-radius: 100%;
 
   cursor: pointer;
+
+  border: none;
 }
 
 .restartButtonIcon{
   width: 100%;
   height: 100%;
+
   border-radius: 100%;
 }
