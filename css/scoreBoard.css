@@ -111,5 +111,5 @@
   width: 50%;
   height: 4rem;
 
-  transform: translate(-3.85rem, -1.5rem);
+  -webkit-transform: translate(-3.85rem, -1.5rem);-ms-transform: translate(-3.85rem, -1.5rem);transform: translate(-3.85rem, -1.5rem);
 }
