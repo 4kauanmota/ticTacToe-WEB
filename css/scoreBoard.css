@@ -9,6 +9,8 @@
 
 .scoreArea{
   display: flex;
+
+  width: 334px;
   margin-left: 1rem;
 }
 
@@ -100,6 +102,8 @@
 
 .winnerIconArea{
   display: flex;
+  
+  width: 334px;
   margin-left: 1rem;
 }
 
