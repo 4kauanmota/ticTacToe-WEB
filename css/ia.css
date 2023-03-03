@@ -54,11 +54,11 @@
 }
 
 .offArea{
-  transform: translate(.5rem, -2.7rem);
+  transform: translate(8px, -43.2px);
 }
 
 .onArea{
-  transform: translate(2rem, -2.7rem);
+  transform: translate(32px, -43.2px);
 }
 
 

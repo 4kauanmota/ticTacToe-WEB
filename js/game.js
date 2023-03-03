@@ -72,12 +72,10 @@ const endGame = (end, currentClass) =>{
   let oScoreValue = Number(oScore.outerText);
   
   if(end){
-    if(currentClass == xClass) xScore.innerText = " " + (xScoreValue += 1);
+    if(currentClass == xClass) xScore.innerText = (xScoreValue += 1);
     else oScore.innerText = (oScoreValue += 1);
     
     winText.innerText = `${actualTurn ? 'O' : 'X'} Wins!`;
-    
-    if(actualTurn != !switchTurn) switchTurns();
     
     if(Math.abs(xScoreValue - oScoreValue) == 0) needChange = true;
     
@@ -87,6 +85,8 @@ const endGame = (end, currentClass) =>{
     }
   }
   else winText.innerText = 'Draw!';
+
+  if(actualTurn != !switchTurn) switchTurns();
   
   winScreen.classList.remove('hide');
 }
