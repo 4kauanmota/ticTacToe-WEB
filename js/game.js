@@ -77,7 +77,7 @@ const endGame = (end, currentClass) =>{
     
     winText.innerText = `${actualTurn ? 'O' : 'X'} Wins!`;
     
-    switchTurns();
+    if(actualTurn != !switchTurn) switchTurns();
     
     if(Math.abs(xScoreValue - oScoreValue) == 0) needChange = true;
     
