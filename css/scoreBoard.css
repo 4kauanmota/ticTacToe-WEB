@@ -41,7 +41,7 @@
 .xArea::before, .xArea::after{
   content: '';
 
-  width: .8.6px;
+  width: 8.8px;
   height: 48px;
 
   position: absolute;
@@ -98,7 +98,7 @@
 
 #xScore, #oScore{
   font-weight: bold;
-  width: 8rem;
+  width: 128px;
 }
 
 .winnerIconArea{
