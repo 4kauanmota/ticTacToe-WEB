@@ -21,6 +21,10 @@
   --mark-size: calc(var(--cell-size) * .8);
 }
 
+html{
+  font-size: 16px;
+}
+
 body{
   margin: 0;
   font-family: 'Inter', sans-serif;
