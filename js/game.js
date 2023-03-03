@@ -72,10 +72,10 @@ const endGame = (end, currentClass) =>{
   let oScoreValue = Number(oScore.outerText);
   
   if(end){
-    if(currentClass == xClass) xScore.innerText = (xScoreValue += 1);
-    else oScore.innerText = (oScoreValue += 1);
+    if(currentClass == xClass) xScore.innerHTML = '&nbsp;' + (xScoreValue += 1);
+    else oScore.innerHTML = '&nbsp;' + (oScoreValue += 1);
     
-    winText.innerText = `${actualTurn ? 'O' : 'X'} Wins!`;
+    winText.innerText = `${actualTurn ? 'O' : 'X'} WINS!`;
     
     if(Math.abs(xScoreValue - oScoreValue) == 0) needChange = true;
     

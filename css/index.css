@@ -4,8 +4,8 @@
 @import url(ia.css);
 
 @font-face {
-  font-family: 'Inter';
-  src: url(../fonts/Inter-Regular.ttf);
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Light.ttf);
 }
 
 *, *::after, *::before{
@@ -27,7 +27,7 @@ html{
 
 body{
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
   background-color: var(--white-color);
 }
