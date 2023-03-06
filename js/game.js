@@ -17,6 +17,8 @@ const restartButton = document.querySelector('.restartButton');
 const winnerIcon = document.querySelector('lord-icon.winnerIcon');
 let actualTurn, switchTurn = true, needChange = true;
 
+const aiButton = document.querySelector('.turnOnIa');
+
 const switchTurns = () =>{
   actualTurn = !actualTurn;
 
@@ -67,7 +69,6 @@ const medalControl = (changeType) =>{
 }
 
 const endGame = (end, currentClass) =>{
-  
   let xScoreValue = Number(xScore.outerText);
   let oScoreValue = Number(oScore.outerText);
   
@@ -93,7 +94,6 @@ const endGame = (end, currentClass) =>{
 
 const placeMark = (cell, currentClass) =>{
   cell.classList.add(currentClass);
-
   
   if(checkWin(currentClass)) endGame(true, currentClass);
   else if(checkDraw()) endGame(false);
@@ -110,21 +110,68 @@ const handleClick = (e) =>{
   placeMark(cell, currentClass);
 }
 
-const startTheGame = () =>{
+function typeOfGame(){
+  if(aiButton.checked) startTheGameAi();
+  else startTheGame();
+}
+
+const resetBoard = () =>{
   winScreen.classList.add('hide');
 
   actualTurn = switchTurn = !switchTurn;
-
+  
   cells.forEach(cell =>{
     cell.classList.remove(oClass);
     cell.classList.remove(xClass);
     cell.removeEventListener('click', handleClick);
+    cell.removeEventListener('click', handleClickAi);
+  });
+}
+
+const startTheGame = () =>{
+  resetBoard();
+
+  cells.forEach(cell =>{
     cell.addEventListener('click', handleClick, { once: true });
   });
 
   setHoverEffect();
 }
 
-restartButton.addEventListener('click', startTheGame);
+const handleClickAi = (e = null) =>{
+  let currentClass = actualTurn ? oClass : xClass;
+  
+  if(currentClass == 'x'){
+    const cell = e.target;
+    placeMark(cell, currentClass);
+  }
+    
+  if(!checkDraw() && !checkWin(xClass)){
+    currentClass = actualTurn ? oClass : xClass;
+    placeMark(aiMark(cells), currentClass)
+  }
+}
 
-startTheGame();
+const startTheGameAi = () =>{
+  resetBoard();
+
+  cells.forEach(cell =>{
+    cell.addEventListener('click', handleClickAi, { once: true });
+  });
+  
+  setHoverEffect();
+  
+  if(actualTurn){
+    setHoverEffect();
+    handleClickAi();
+  }
+}
+
+const reload = () =>{
+  window.location.reload(false)
+}
+
+restartButton.addEventListener('click', typeOfGame);
+aiButton.addEventListener('change', () =>{setTimeout(() =>{window.location.reload(false)}, 1000)});
+
+typeOfGame();
