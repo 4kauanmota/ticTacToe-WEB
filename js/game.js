@@ -167,11 +167,17 @@ const startTheGameAi = () =>{
   }
 }
 
-const reload = () =>{
-  window.location.reload(false)
+const newGame = () =>{
+  switchTurn = true;
+  currentClass = actualTurn ? oClass : xClass;
+
+  xScore.innerHTML = '&nbsp;0';
+  oScore.innerHTML = '&nbsp;0';
+
+  typeOfGame();
 }
 
 restartButton.addEventListener('click', typeOfGame);
-aiButton.addEventListener('change', () =>{setTimeout(() =>{window.location.reload(false)}, 1000)});
+aiButton.addEventListener('change', newGame);
 
 typeOfGame();
