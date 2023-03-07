@@ -17,8 +17,8 @@ const updateBoard = (cells) =>{
 
 let scores = {
   tie: 0,
-  o: 10,
-  x: -10
+  o: 1,
+  x: -1
 }
 
 let checkWinAi = (boardAi) =>{
@@ -88,12 +88,15 @@ const minimax = (boardAi, depth, isMaximizing) =>{
 const aiMove = (boardAi) =>{
   let bestValue = -Infinity, move = {i: 0, j: 0};
 
-  for(let i = 0; i < 3; i++)
-    for(let j = 0; j < 3; j++)
+  console.log(`-------------------------------------------------------`)
+
+  for(let i = 0; i < 3; i++){
+    for(let j = 0; j < 3; j++){
       if(boardAi[i][j] == ''){
 
         boardAi[i][j] = oClass;
         let value = minimax(boardAi, 0, false);
+        console.log(`[row -> ${i}] [column -> ${j}] = ${value}`)
         boardAi[i][j] = '';
 
         if(value > bestValue){
@@ -101,7 +104,10 @@ const aiMove = (boardAi) =>{
           move = { i, j }
         }
       }
+    }
+  }
 
+  console.log(`---------------- ${bestValue * 100}% chance of winning ----------------`)
   return move;
 }
 
