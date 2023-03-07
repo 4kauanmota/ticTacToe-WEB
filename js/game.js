@@ -6,16 +6,23 @@ const xArea = document.querySelector('.xArea');
 const oArea = document.querySelector('.oArea');
 const xScore = document.getElementById('xScore');
 const oScore = document.getElementById('oScore');
-const winningCombinatios = [
-  [0, 1, 2], [3, 4, 5], [6, 7, 8],
-  [0, 3, 6], [1, 4, 7], [2, 5, 8],
-  [0, 4, 8], [2, 4, 6]
-]
 const winScreen = document.querySelector('div#winScreen');
 const winText = document.querySelector('.winText');
 const restartButton = document.querySelector('.restartButton');
 const winnerIcon = document.querySelector('lord-icon.winnerIcon');
 let actualTurn, switchTurn = true, needChange = true;
+
+const winningCombinatios = [
+  [0, 1, 2], [3, 4, 5], [6, 7, 8],
+  [0, 3, 6], [1, 4, 7], [2, 5, 8],
+  [0, 4, 8], [2, 4, 6]
+];
+
+const boardAi = [
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', '']
+];
 
 const aiButton = document.querySelector('.turnOnIa');
 
@@ -94,6 +101,7 @@ const endGame = (end, currentClass) =>{
 
 const placeMark = (cell, currentClass) =>{
   cell.classList.add(currentClass);
+  updateBoard(cells);
   
   if(checkWin(currentClass)) endGame(true, currentClass);
   else if(checkDraw()) endGame(false);
@@ -139,16 +147,18 @@ const startTheGame = () =>{
 }
 
 const handleClickAi = (e = null) =>{
-  let currentClass = actualTurn ? oClass : xClass;
+  if(e == null || !e.target.classList.contains('o') && !e.target.classList.contains('x')){
+    let currentClass = actualTurn ? oClass : xClass;
   
-  if(currentClass == 'x'){
-    const cell = e.target;
-    placeMark(cell, currentClass);
-  }
-    
-  if(!checkDraw() && !checkWin(xClass)){
-    currentClass = actualTurn ? oClass : xClass;
-    placeMark(aiMark(cells), currentClass)
+    if(currentClass == 'x'){
+      const cell = e.target;
+      placeMark(cell, currentClass)
+    };
+      
+    if(!checkDraw() && !checkWin(xClass)){
+      currentClass = actualTurn ? oClass : xClass;
+      placeMark(aiMark(cells, boardAi), currentClass)
+    }
   }
 }
 
