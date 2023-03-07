@@ -1,14 +1,23 @@
 ![Project Stars](https://img.shields.io/github/stars/4kauanmota/ticTacToe?color=1e90ff) ![Project Commits Week](https://img.shields.io/github/commit-activity/w/4kauanmota/tictacToe?color=1e90ff)
-# ✖️ A tic-tac-toe with minimax algorithm
+
+# 📄 **Informations**
 **This project had the help of these 2 videos**
 + https://youtu.be/Y-GkMjUZsmM (tictactoe game) 
 + https://youtu.be/trKjYdBASyQ (minimax algorithm) 
 
-**The features added by my self are:**
+# ✨ **Features**
++ Hover effect
 + The first player changes after a round
 + Scoreboard
 + Indication of the player with best pontuation
 + Button to change player/ai
-+ Adptaded minimax algorithm
++ Minimax algorithm
+
+# 💻 **Technologies**
++ `HTML`
++ `CSS`
++ `JAVASCRIPT`
++ `VISUAL STUDIO CODE`
++ `BOHR`
 
 **You can test the game clicking [HERE](tictactoe.bohr.io)**
