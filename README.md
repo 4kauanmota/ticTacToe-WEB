@@ -1,4 +1,4 @@
-![Project Stars](https://img.shields.io/github/stars/4kauanmota/ticTacToe?color=1e90ff) ![Project Commits Week](https://img.shields.io/github/commit-activity/w/4kauanmota/tictacToe?color=1e90ff)
+![Project Stars](https://img.shields.io/github/stars/4kauanmota/ticTacToe-WEB?color=1e90ff) ![Project Commits Week](https://img.shields.io/github/commit-activity/w/4kauanmota/tictacToe-WEB?color=1e90ff)
 
 # 📄 **Informations**
 **This project had the help of these 2 videos**
