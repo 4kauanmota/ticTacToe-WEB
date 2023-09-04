@@ -20,4 +20,4 @@
 + `VISUAL STUDIO CODE`
 + `BOHR`
 
-**You can test the game by clicking [HERE](https://tictactoe.bohr.io/)**
+**You can test the game by clicking [HERE](https://4kauanmota.github.io/ticTacToe-WEB/)**
